@@ -12,18 +12,18 @@ class PublicController extends Controller
         ['name'=> 'Guido', 'surname'=> 'Verdi', 'role'=> 'Developer' ]
     ];
      public function Homepage()
-   {
+     {
        return view('welcome');
-   }
+     }
 
    public function aboutus()
    {
-    return view('Chi-Siamo',['users'=>$this->$users]);
+    return view('Chi-Siamo', ['users'=> $this-> users]);
    }
 
    public function ChiSiamodetail($name)
    {
-       foreach ($this->$users as $user){
+       foreach ($this-> users as $user){
         if($name == $user['name']){
         return view('Chi-Siamo-detail',['user'=>$user]);
         }

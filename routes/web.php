@@ -1,6 +1,9 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', [PublicController::class, 'Homepage'])->name('Homepage');
 
