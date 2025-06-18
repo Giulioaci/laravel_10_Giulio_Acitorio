@@ -15,7 +15,19 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ route('Contacts')}}">Contatti</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ route('movielist')}}">Movies</a>
-        </li>
-</nav>
+         <li class="nav-item dropdown">
+          <a class="nav-link active " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Movies
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ route('movielist')}}">I nostri film</a></li>
+   </nav>
+
+
+
+
+
+
+
+
+
