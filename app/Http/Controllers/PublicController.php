@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
 {
@@ -34,4 +36,19 @@ class PublicController extends Controller
     {
      return view('Contatti');
     }
+
+    public function contactUs(Request $request){
+
+      $user = $request->input('user');
+      $email = $request->input('email');
+      $message = $request->input('message');
+
+
+      try {
+        Mail::to($email)->send(new ContactMail());
+      }catch(Exception $e){
+        return redirect()->route('homepage')->whith('emailError', "C'è stato un Problema con l'invio della mail.riprova!");
+      }
+      return redirect(route('homepage'))->with('emailSent','Hai corretamente inviato una mail');
+      }
 }

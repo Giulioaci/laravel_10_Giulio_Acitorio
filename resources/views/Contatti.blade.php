@@ -17,7 +17,8 @@
             <div class="row h-95 justify-content-center align-items-center">
             <h2 class= "text-white display-15 text-center text-color">Invia una mail</h2>
             <div class="col-6 col md-8">
-            <form>
+            <form method="post" action="{{route('contactUs')}}">
+                @csrf
                 <div class="mb-8">
                   <label for="user" class="form-label text-white">Nome</label>
                   <input type="text" name='user' class="form-control" id="user" aria-describedby="emailHelp">

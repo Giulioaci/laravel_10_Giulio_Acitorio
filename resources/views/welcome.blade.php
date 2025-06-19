@@ -1,6 +1,16 @@
 <x-layout>
 <header>
     <div class="container-fluid header">
+        @if (session()->has('emailSent'))
+        <div class="alert alert-success">
+           {{ session('emailSent') }}
+        </div>
+        @endif
+        @if (session()->has('emailError'))
+        <div class="alert alert-danger">
+           {{ session('emailError') }}
+        </div>
+        @endif
         <div class="row h-100">
             <div class="col-12">
                 <h1 class="text.light display-1 fw-bold colorh1" >Blog</h1>

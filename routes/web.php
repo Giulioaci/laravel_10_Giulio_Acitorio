@@ -14,3 +14,5 @@ Route::get('/Chi-Siamo/detail/{name}', [PublicController::class, 'ChiSiamodetail
 Route::get('/Contatti',  [PublicController::class, 'Contacts'])->name('Contacts');
 
 Route::get('/movies', [MovieController::class, 'movielist'] )->name('movielist');
+
+Route::post('/contact-us', [PublicController::class, 'contactUs'] )->name('contactUs');
