@@ -11,6 +11,11 @@
            {{ session('emailError') }}
         </div>
         @endif
+        @if (session()->has('successMessage'))
+        <div class="alert alert-success">
+           {{ session('successMessage') }}
+        </div>
+        @endif
         <div class="row h-100">
             <div class="col-12">
                 <h1 class="text.light display-1 fw-bold colorh1" >Blog</h1>
