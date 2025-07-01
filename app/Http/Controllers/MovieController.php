@@ -15,7 +15,7 @@ class MovieController extends Controller
     // ];
 
      $movies =Movie::all();
-     return view('movie.movies',['movies'=> $movies]);
+     return view('Movie.movies',['movies'=> $movies]);
     }
 
     public function create(){
