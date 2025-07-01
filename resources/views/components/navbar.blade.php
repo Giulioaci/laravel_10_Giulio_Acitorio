@@ -21,6 +21,9 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ route('movielist')}}">I nostri film</a></li>
+            <li class="nav-item">
+          <li><a class="dropdown-item" href="{{ route('movie.create')}}">Inserisci il tuo film</a></li>
+        </li>
    </nav>
 
 

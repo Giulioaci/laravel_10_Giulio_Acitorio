@@ -21,4 +21,8 @@ Route::get('/movie/create', [MovieController::class, 'create'] )->name('movie.cr
 
 Route::post('/movie/submit', [MovieController::class, 'store'] )->name('movie.submit');
 
+Route::get('/movie/Create', [MovieController::class, 'store'] )->name('movie.submit');
+
+
+
 
