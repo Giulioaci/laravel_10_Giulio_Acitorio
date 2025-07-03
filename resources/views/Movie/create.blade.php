@@ -5,7 +5,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-8">
-                <form method="post" action="{{route('movie.submit')}}">
+                <form method="post" action="{{route('movie.submit')}}" enctype="multipart/form-data">
                     @csrf
                    <div class="mb-3">
                     <label for="title" class="form-label">Titolo:</label>
@@ -18,6 +18,10 @@
                    <div class="mb-3">
                     <label for="year" class="form-label">Anno di uscita:</label>
                     <input type="text" name='year' class="form-control" id="title" aria-describedby="yearlHelp">
+                   </div>
+                   <div class="mb-3">
+                    <label for="img" class="form-label">Inserisci una locandina:</label>
+                    <input type="file" name='img' class="form-control" id="title" aria-describedby="yearlHelp">
                    </div>
                    <div class="mb-3">
                     <label for="plot" class="form-label">Trama:</label>

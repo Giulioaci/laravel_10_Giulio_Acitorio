@@ -19,7 +19,7 @@ class MovieController extends Controller
     }
 
     public function create(){
-        return view('movie.create');
+        return view('Movie.create');
     }
 
     public function store(Request $request){  
@@ -28,6 +28,7 @@ class MovieController extends Controller
         $movie->director = $request->director;
         $movie->year = $request->year;
         $movie->plot = $request->plot;
+        $movie->img = $request->file('img')->store('public/images');
         $movie->save();
         
         return redirect()->route('Homepage')->with('successMessage','Hai correttamente inviato il tuo film');
