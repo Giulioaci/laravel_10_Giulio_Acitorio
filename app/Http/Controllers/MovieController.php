@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use App\Http\Requests\MovieRequest;
 
 class MovieController extends Controller
 {
@@ -22,7 +23,7 @@ class MovieController extends Controller
         return view('Movie.create');
     }
 
-    public function store(Request $request){  
+    public function store(MovieRequest $request){  
         $movie = new Movie();
         $movie->title = $request->title;
         $movie->director = $request->director;

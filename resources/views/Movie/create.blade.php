@@ -5,6 +5,15 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-8">
+                @if ($errors->any())
+                     <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                      </div>
+                @endif
                 <form method="post" action="{{route('movie.submit')}}" enctype="multipart/form-data">
                     @csrf
                    <div class="mb-3">
