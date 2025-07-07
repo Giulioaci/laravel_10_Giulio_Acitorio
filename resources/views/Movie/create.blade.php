@@ -30,7 +30,7 @@
                    </div>
                    <div class="mb-3">
                     <label for="img" class="form-label">Inserisci una locandina:</label>
-                    <input type="file" name='img' class="form-control" id="title" aria-describedby="yearlHelp">
+                    <input type="file" name='img' class="form-control" id="img" aria-describedby="yearlHelp">
                    </div>
                    <div class="mb-3">
                     <label for="plot" class="form-label">Trama:</label>

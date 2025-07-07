@@ -29,7 +29,7 @@ class MovieController extends Controller
         $movie->director = $request->director;
         $movie->year = $request->year;
         $movie->plot = $request->plot;
-        $movie->img = $request->file('img')->store('public/images');
+        $movie->img = $request->file('img')->store('images', 'public');
         $movie->save();
         
         return redirect()->route('Homepage')->with('successMessage','Hai correttamente inviato il tuo film');
