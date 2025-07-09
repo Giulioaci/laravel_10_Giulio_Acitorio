@@ -22,9 +22,37 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ route('movielist')}}">I nostri film</a></li>
             <li class="nav-item">
-          <li><a class="dropdown-item" href="{{ route('movie.create')}}">Inserisci il tuo film</a></li>
+          <li><a class="dropdown-item" href="{{ route('movie.create')}}">Inserisci il tuo film</a>
         </li>
+        </li>
+        </ul> 
+        <li class="nav-item dropdown">
+          @auth
+          <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ciao, {{Auth::user()->name}}
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementbyId('form-logout').submit(); "class="dropdown-item">Logout</a>
+              <form action="{{route('logout')}}" method="POST" style="display:none;" id="form-logout">@csrf</form>
+            </li>
+          </ul>
+          @else
+          <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ciao, ospite
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
+            <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
+            </ul>
+            @endauth
+        </li>
+    </ul>
    </nav>
+
+
+
+   
 
 
 

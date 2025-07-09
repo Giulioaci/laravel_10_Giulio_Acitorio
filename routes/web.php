@@ -17,11 +17,11 @@ Route::get('/movies', [MovieController::class, 'movielist'] )->name('movielist')
 
 Route::post('/contact-us', [PublicController::class, 'contactUs'] )->name('contactUs');
 
-Route::get('/movie/create', [MovieController::class, 'create'] )->name('movie.create');
+Route::get('/movie/create', [MovieController::class, 'create'] )->name('movie.create')->middleware('auth');
 
 Route::post('/movie/submit', [MovieController::class, 'store'] )->name('movie.submit');
 
-Route::post('/movie/Create', [MovieController::class, 'store'] )->name('movie.submit');
+Route::post('/movie/Create', [MovieController::class, 'store'] )->name('movie.submit')->middleware('auth');
 
 
 

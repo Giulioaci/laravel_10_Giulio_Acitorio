@@ -8,7 +8,7 @@ use App\Http\Requests\MovieRequest;
 
 class MovieController extends Controller
 {
-    public function movielist()
+      public function movielist()
     {
     //  $movies = [
     //     ['id'=> '1', 'title'=> 'incontri ravvicinati del terzo tipo', 'director'=> 'S. spielberg', 'img'=> '/Media/ragazzi.jpg' ],
