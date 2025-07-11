@@ -10,6 +10,13 @@
             <div class="col-12 col-md-6 ">
                 <img src="{{Storage::url($movie->img)}}" alt="">
             </div>
+            <div class="row">
+                <form action="{{route('movie.delete',compact('movie'))}}" method='post'>
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit">Elimina il Film</button>
+                </form>
+            </div>
         </div>
     </div>
 </header>

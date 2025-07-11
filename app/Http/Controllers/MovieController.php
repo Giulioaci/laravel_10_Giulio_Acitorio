@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 use App\Http\Requests\MovieRequest;
+use App\Http\Requests\MovieEditRequest;
 
 class MovieController extends Controller
 {
@@ -43,7 +44,7 @@ class MovieController extends Controller
         return view('movie.edit', compact('movie'));
     }
 
-     public function update(Request $request, Movie $movie){
+     public function update(MovieEditRequest $request, Movie $movie){
 
        $movie->update([
         $movie->title = $request->title,
@@ -52,13 +53,19 @@ class MovieController extends Controller
         $movie->plot = $request->plot,
        ]);
        if($request->img){
+        $request->validate(['img'=> 'image']);
         $movie->update([
            $movie->img = $request->file('img')->store('public/images')
         ]);
        }
 
-
+          return redirect()->route('Homepage')->with('successMessage','Hai correttamente modificato il film');
         
+    }
+
+     public function destroy(Movie $movie){
+        $movie->delete();
+        return redirect()->route('Homepage')->with('successMessage','Hai correttamente eliminato il film');
     }
   
     

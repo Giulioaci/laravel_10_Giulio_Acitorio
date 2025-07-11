@@ -25,9 +25,13 @@ Route::post('/movie/Create', [MovieController::class, 'store'] )->name('movie.su
 
 Route::get('/movie/show/{movie}', [MovieController::class, 'show'] )->name('movie.show');
 
-Route::get('/movie/edit/{movie}', [MovieController::class, 'edit'] )->name('movie.edit');
+Route::get('/movie/edit/{movie}', [MovieController::class, 'edit'] )->name('movie.edit')->middleware('auth');
 
-Route::put('/movie/update/{movie}', [MovieController::class, 'update'] )->name('movie.update');
+Route::put('/movie/update/{movie}', [MovieController::class, 'update'] )->name('movie.update')->middleware('auth');
+
+Route::delete('/movie/delete/{movie}', [MovieController::class, 'destroy'] )->name('movie.delete')->middleware('auth');
+
+
 
 
 
