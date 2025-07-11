@@ -21,7 +21,13 @@ Route::get('/movie/create', [MovieController::class, 'create'] )->name('movie.cr
 
 Route::post('/movie/submit', [MovieController::class, 'store'] )->name('movie.submit');
 
-Route::post('/movie/Create', [MovieController::class, 'store'] )->name('movie.submit')->middleware('auth');
+Route::post('/movie/Create', [MovieController::class, 'store'] )->name('movie.submit');
+
+Route::get('/movie/show/{movie}', [MovieController::class, 'show'] )->name('movie.show');
+
+Route::get('/movie/edit/{movie}', [MovieController::class, 'edit'] )->name('movie.edit');
+
+Route::put('/movie/update/{movie}', [MovieController::class, 'update'] )->name('movie.update');
 
 
 

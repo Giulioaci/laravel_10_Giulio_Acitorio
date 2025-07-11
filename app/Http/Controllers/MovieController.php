@@ -34,5 +34,33 @@ class MovieController extends Controller
         
         return redirect()->route('Homepage')->with('successMessage','Hai correttamente inviato il tuo film');
     }
+
+    public function show(Movie $movie){
+        return view('movie.show', compact('movie'));
+    }
+
+    public function edit(Movie $movie){
+        return view('movie.edit', compact('movie'));
+    }
+
+     public function update(Request $request, Movie $movie){
+
+       $movie->update([
+        $movie->title = $request->title,
+        $movie->director = $request->director,
+        $movie->year = $request->year,
+        $movie->plot = $request->plot,
+       ]);
+       if($request->img){
+        $movie->update([
+           $movie->img = $request->file('img')->store('public/images')
+        ]);
+       }
+
+
+        
+    }
+  
+    
 }
 

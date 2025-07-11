@@ -33,7 +33,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementbyId('form-logout').submit(); "class="dropdown-item">Logout</a>
+              <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit(); "class="dropdown-item">Logout</a>
               <form action="{{route('logout')}}" method="POST" style="display:none;" id="form-logout">@csrf</form>
             </li>
           </ul>
