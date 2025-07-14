@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 use App\Http\Requests\MovieRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\MovieEditRequest;
 
 class MovieController extends Controller
@@ -32,6 +33,7 @@ class MovieController extends Controller
         $movie->plot = $request->plot;
         $movie->img = $request->file('img')->store('images', 'public');
         $movie->save();
+        $movie->user_id = Auth::user()->id;
         
         return redirect()->route('Homepage')->with('successMessage','Hai correttamente inviato il tuo film');
     }
@@ -55,7 +57,7 @@ class MovieController extends Controller
        if($request->img){
         $request->validate(['img'=> 'image']);
         $movie->update([
-           $movie->img = $request->file('img')->store('public/images')
+        $movie->img = $request->file('img')->store('public/images')
         ]);
        }
 

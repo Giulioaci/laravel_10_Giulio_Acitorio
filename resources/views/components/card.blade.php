@@ -3,7 +3,7 @@
                     <div class="card-body">
                       <a href="{{route('movie.show', compact('movie'))}}" class="btn btn-primary">Leggi di più</a>
                     </div>
-                    <div class="card-body"> 
-                      <a href="{{route('movie.edit', compact('movie'))}}" class="btn btn-primary">Modifica il film</a>
+                    <div class="card-body">
+                        <a href="{{route('movie.edit', compact('movie'))}}" class="btn btn-primary">Modifica il film</a>
                     </div>
                   </div>
