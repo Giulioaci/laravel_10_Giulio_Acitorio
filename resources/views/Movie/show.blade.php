@@ -10,6 +10,8 @@
             <div class="col-12 col-md-6 ">
                 <img src="{{Storage::url($movie->img)}}" alt="">
             </div>
+            @auth
+             @if($movie->user_id == Auth::id())
             <div class="row">
                 <form action="{{route('movie.delete',compact('movie'))}}" method='post'>
                   @csrf
@@ -17,6 +19,8 @@
                   <button type="submit">Elimina il Film</button>
                 </form>
             </div>
+            @endauth
+             @endif
         </div>
     </div>
 </header>

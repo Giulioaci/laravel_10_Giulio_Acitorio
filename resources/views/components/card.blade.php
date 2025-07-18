@@ -4,6 +4,10 @@
                       <a href="{{route('movie.show', compact('movie'))}}" class="btn btn-primary">Leggi di più</a>
                     </div>
                     <div class="card-body">
+                      @auth
+                       @if($movie->user_id == Auth::id())
                         <a href="{{route('movie.edit', compact('movie'))}}" class="btn btn-primary">Modifica il film</a>
+                        @endif
+                      @endauth 
                     </div>
                   </div>

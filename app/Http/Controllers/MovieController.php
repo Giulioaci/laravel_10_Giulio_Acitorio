@@ -26,24 +26,25 @@ class MovieController extends Controller
     }
 
     public function store(MovieRequest $request){  
-        $movie = new Movie();
-        $movie->title = $request->title;
-        $movie->director = $request->director;
-        $movie->year = $request->year;
-        $movie->plot = $request->plot;
-        $movie->img = $request->file('img')->store('images', 'public');
-        $movie->save();
-        $movie->user_id = Auth::user()->id;
+        $movie = Movie::Create([
+        'title' => $request->title,
+        'director' => $request->director,
+        'year' => $request->year,
+        'plot' => $request->plot,
+        'img' => $request->file('img')->store('images', 'public'),
+        'user_id' => Auth::user()->id
+        ]);
         
-        return redirect()->route('Homepage')->with('successMessage','Hai correttamente inviato il tuo film');
+        
+        return redirect()->route('Homepage')->with('successMessage','Hai correttamente inserito il tuo film');
     }
 
     public function show(Movie $movie){
-        return view('movie.show', compact('movie'));
+        return view('Movie.show', compact('movie'));
     }
 
     public function edit(Movie $movie){
-        return view('movie.edit', compact('movie'));
+        return view('Movie.edit', compact('movie'));
     }
 
      public function update(MovieEditRequest $request, Movie $movie){
