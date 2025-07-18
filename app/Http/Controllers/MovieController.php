@@ -44,10 +44,17 @@ class MovieController extends Controller
     }
 
     public function edit(Movie $movie){
-        return view('Movie.edit', compact('movie'));
+        if($movie->user_id == Auth::user()->id){
+         return view('Movie.edit', compact('movie'));
+        }else{
+            return redirect()->route('Homepage')->with('errorMessage','Non puoi accedere a questa pagina');
+        }
+
+        
     }
 
      public function update(MovieEditRequest $request, Movie $movie){
+        if($movie->user_id == Auth::user()->id){
 
        $movie->update([
         $movie->title = $request->title,
@@ -63,12 +70,18 @@ class MovieController extends Controller
        }
 
           return redirect()->route('Homepage')->with('successMessage','Hai correttamente modificato il film');
+     }else{return redirect()->route('Homepage')->with('errorMessage','Non puoi accedere a questa pagina');
+    }
         
     }
 
      public function destroy(Movie $movie){
+        if($movie->user_id == Auth::user()->id){
         $movie->delete();
         return redirect()->route('Homepage')->with('successMessage','Hai correttamente eliminato il film');
+        }else{
+           return redirect()->route('Homepage')->with('errorMessage','Non puoi accedere a questa pagina'); 
+        }
     }
   
     

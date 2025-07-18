@@ -46,4 +46,10 @@ class PublicController extends Controller
         Mail::to($email)->send(new ContactMail());
         return redirect(route('Homepage'))->with('emailSent','Hai correttamente inviato una email');
       }
+
+      public function profile()
+    {
+     return view('profile');
+    }
+
 }
