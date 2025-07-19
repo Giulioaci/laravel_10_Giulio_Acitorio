@@ -8,7 +8,7 @@
                 <x-card :movie="$movie" />
             </div>
             @empty
-            <h3 class ="text-white text-center">Non hai ancora pubblicato nessun film</h3>
+            <h3 class ="text-white text-center">Non hai ancora inserito nessun film</h3>
             @endforelse
         </div>
     </div>

@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid">
         <div class="row">
-            <h2>inserisci il tuo film preferito:</h2>
+            <h2>Modifica il tuo film:</h2>
         </div>
         <div class="row">
             <div class="col-12 col-md-8">
@@ -37,7 +37,7 @@
                     <label for="plot" class="form-label">Trama:</label>
                     <textarea name="plot" id="" cols="30" rows="10" class="form-control"></textarea>
                    </div>
-                   <button type="submit" class="btn btn-primary">Inserisci il tuo film</button>
+                   <button type="submit" class="btn btn-primary">Modifica</button>
                 </form>
             </div>
         </div>
