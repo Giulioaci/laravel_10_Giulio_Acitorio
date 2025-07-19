@@ -23,13 +23,15 @@
             <li><a class="dropdown-item" href="{{ route('movielist')}}">I nostri film</a></li>
             <li class="nav-item">
           <li><a class="dropdown-item" href="{{ route('movie.create')}}">Inserisci il tuo film</a>
+          <li><a class="dropdown-item" href="{{ route('genere.create')}}">Aggiungi categoria</a></li>
+          <li><a class="dropdown-item" href="{{ route('genere.index')}}">Tutte le categorie</a></li>
         </li>
         </li>
         </ul> 
         <li class="nav-item dropdown">
           @auth
           <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ciao, {{Auth::user()->name}}
+            Ciao, {{Auth::user()->name}}
           </a>
           <ul class="dropdown-menu">
             <li>
@@ -42,7 +44,7 @@
           </ul>
           @else
           <a class="nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ciao, ospite
+            Ciao, Ospite
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>

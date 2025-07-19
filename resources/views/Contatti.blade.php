@@ -31,7 +31,7 @@
                   <label for="message" class="form-label text-white">Messaggio</label>
                   <input type="message" name='message'  class="form-control" id="message">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Invia</button>
             </form>
             </div>
         </div>

@@ -36,6 +36,13 @@
                     <label for="plot" class="form-label">Trama:</label>
                     <textarea name="plot" id="" cols="30" rows="10" class="form-control"></textarea>
                    </div>
+                   <div class="mb-3">
+                    @foreach ($generes as $genere)
+                    <input type="checkbox" id="{{'genereCheck' . $genere->id}}" name="generes[]" value="{{$genere->id}}">
+                    <label for="{{'genereCheck' . $genere->id}}">{{$genere->name}}</label>
+                    @endforeach
+                    <p>Non vedi la categoria corretta? <a href="{{ route('genere.create')}}">Inseriscila tu</a></p>
+                   </div>
                    <button type="submit" class="btn btn-primary">Inserisci il tuo film</button>
                 </form>
             </div>

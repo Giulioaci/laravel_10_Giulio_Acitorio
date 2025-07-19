@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\genere;
 use Illuminate\Http\Request;
 use App\Http\Requests\MovieRequest;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +23,8 @@ class MovieController extends Controller
     }
 
     public function create(){
-        return view('Movie.create');
+        $generes = genere::all();
+        return view('Movie.create', compact('generes'));
     }
 
     public function store(MovieRequest $request){  
@@ -34,6 +36,8 @@ class MovieController extends Controller
         'img' => $request->file('img')->store('images', 'public'),
         'user_id' => Auth::user()->id
         ]);
+
+        $movie->generes()->attach($request->generes);
         
         
         return redirect()->route('Homepage')->with('successMessage','Hai correttamente inserito il tuo film');

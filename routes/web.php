@@ -33,6 +33,17 @@ Route::delete('/movie/delete/{movie}', [MovieController::class, 'destroy'] )->na
 
 Route::get('/user/profile', [PublicController::class, 'profile'] )->name('user.profile');
 
+Route::get('/genere/create', [GenereController::class, 'create'] )->name('genere.create')->middleware('auth');
+
+Route::post('/genere/create/submit', [GenereController::class, 'store'] )->name('genere.submit');
+
+Route::get('/genere/index', [GenereController::class, 'index'] )->name('genere.index')->middleware('auth');
+
+Route::get('/genere/show/genere', [GenereController::class, 'show'] )->name('genere.show');
+
+
+
+
 
 
 

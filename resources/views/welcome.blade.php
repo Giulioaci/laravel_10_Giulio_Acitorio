@@ -1,6 +1,6 @@
 <x-layout>
-<header>
-    <div class="container-fluid header">
+<header class="header">
+    <div class="container-fluid">
         @if (session()->has('emailSent'))
         <div class="alert alert-success">
            {{ session('emailSent') }}
