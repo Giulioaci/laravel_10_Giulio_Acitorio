@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\genere;
+use App\Models\Genere;
 use Illuminate\Http\Request;
 
 class GenereController extends Controller
@@ -17,7 +17,7 @@ class GenereController extends Controller
     }
 
     public function show(genere $genere){
-    
+         $genere->load('movies');
         return view('genere.show', compact('genere'));
     }
 

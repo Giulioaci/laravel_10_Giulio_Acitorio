@@ -39,7 +39,7 @@ Route::post('/genere/create/submit', [GenereController::class, 'store'] )->name(
 
 Route::get('/genere/index', [GenereController::class, 'index'] )->name('genere.index')->middleware('auth');
 
-Route::get('/genere/show/genere', [GenereController::class, 'show'] )->name('genere.show');
+Route::get('/genere/show/{genere}', [GenereController::class, 'show'])->name('genere.show');
 
 
 

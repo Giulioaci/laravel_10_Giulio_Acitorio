@@ -6,7 +6,13 @@
                <h2 class="text-white">Titolo: {{$movie->title}}</h2>
                <h3 class="text-white">Regista: {{$movie->director}}</h3>
                <p class="text-white">Trama: {{$movie->plot}}</p>
-            </div>
+               <ul>
+                @forelse($movie->generes as $genere)
+                   <li class="text-white">{{$genere->name}}</li>
+                   @empty
+                @endforelse
+               </ul>
+               </div>
             <div class="col-12 col-md-6 ">
                 <img src="{{Storage::url($movie->img)}}" alt="">
             </div>

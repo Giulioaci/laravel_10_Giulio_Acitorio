@@ -14,32 +14,46 @@
                         </ul>
                       </div>
                 @endif
-                <form method="post" action="{{route('movie.update', compact('movie'))}}" enctype="multipart/form-data">
+
+                <form method="POST" action="{{ route('movie.update', $movie->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                   <div class="mb-3">
-                    <label for="title" class="form-label">Titolo:</label>
-                    <input type="text" name='title' class="form-control" id="title" aria-describedby="titlelHelp">
-                   </div>
+
                     <div class="mb-3">
-                    <label for="director" class="form-label">Regista:</label>
-                    <input type="text" name='director'class="form-control" id="title" aria-describedby="directorlHelp">
-                   </div>
-                   <div class="mb-3">
-                    <label for="year" class="form-label">Anno di uscita:</label>
-                    <input type="text" name='year' class="form-control" id="title" aria-describedby="yearlHelp">
-                   </div>
-                   <div class="mb-3">
-                    <label for="img" class="form-label">Inserisci una locandina:</label>
-                    <input type="file" name='img' class="form-control" id="img" aria-describedby="yearlHelp">
-                   </div>
-                   <div class="mb-3">
-                    <label for="plot" class="form-label">Trama:</label>
-                    <textarea name="plot" id="" cols="30" rows="10" class="form-control"></textarea>
-                   </div>
-                   <button type="submit" class="btn btn-primary">Modifica</button>
+                        <label for="title" class="form-label">Titolo:</label>
+                        <input type="text" name="title" class="form-control" id="title"
+                               value="{{ old('title', $movie->title) }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="director" class="form-label">Regista:</label>
+                        <input type="text" name="director" class="form-control" id="director"
+                               value="{{ old('director', $movie->director) }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="year" class="form-label">Anno di uscita:</label>
+                        <input type="text" name="year" class="form-control" id="year"
+                               value="{{ old('year', $movie->year) }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="img" class="form-label">Inserisci una locandina:</label>
+                        <input type="file" name="img" class="form-control" id="img">
+                        @if ($movie->img)
+                            <p>Immagine attuale:</p>
+                            <img src="{{ asset('storage/' . $movie->img) }}" width="120">
+                        @endif
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="plot" class="form-label">Trama:</label>
+                        <textarea name="plot" id="plot" cols="30" rows="10" class="form-control">{{ old('plot', $movie->plot) }}</textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Modifica</button>
                 </form>
             </div>
         </div>
     </div>
-</x-layout>    
+</x-layout>

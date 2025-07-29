@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
-use App\Models\genere;
+use App\Models\Genere;
 use Illuminate\Http\Request;
 use App\Http\Requests\MovieRequest;
 use Illuminate\Support\Facades\Auth;
@@ -60,17 +60,17 @@ class MovieController extends Controller
      public function update(MovieEditRequest $request, Movie $movie){
         if($movie->user_id == Auth::user()->id){
 
-       $movie->update([
-        $movie->title = $request->title,
-        $movie->director = $request->director,
-        $movie->year = $request->year,
-        $movie->plot = $request->plot,
+      $movie->update([
+       'title' => $request->title,
+       'director' => $request->director,
+       'year' => $request->year,
+       'plot' => $request->plot,
        ]);
-       if($request->img){
+       if($request->hasFile('img')){
         $request->validate(['img'=> 'image']);
         $movie->update([
-        $movie->img = $request->file('img')->store('public/images')
-        ]);
+        'img' => $request->file('img')->store('images', 'public')
+    ]);
        }
 
           return redirect()->route('Homepage')->with('successMessage','Hai correttamente modificato il film');

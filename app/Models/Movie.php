@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\genere;
+use App\Models\Genere;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
