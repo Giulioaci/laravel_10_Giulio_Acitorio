@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Genere;
+use App\Models\Genre;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,7 +16,7 @@ class Movie extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function generes(){
-        return $this->belongsToMany(genere::class);
+    public function Genres(){
+        return $this->belongsToMany(Genre::class);
     }
 }

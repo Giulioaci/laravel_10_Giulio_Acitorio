@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Genres', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
+        Schema::table('genre_movie', function (Blueprint $table) {
+
+            $table->renameColumn('genere_id', 'genre_id');
+            
         });
     }
 
@@ -23,6 +23,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Genres');
+        Schema::table('genre_movie', function (Blueprint $table) {
+
+            $table->renameColumn('genere_id', 'genre_id');
+            
+        });
     }
 };

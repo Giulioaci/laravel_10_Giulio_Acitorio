@@ -12,11 +12,11 @@
               </ul>
             </div>
           @endif
-            <form method='post' action="{{route('genere.submit')}}">
+            <form method='post' action="{{route('Genre.submit')}}">
                 @csrf
                <div class="mb-3">
-                <label for="genere" class="form-label text-white">Inserisci la categoria</label>
-                <input type="text" name="name" class="form-control" id="genere" aria-describedby="emailHelp" value="{{old('name')}}">
+                <label for="Genre" class="form-label text-white">Inserisci la categoria</label>
+                <input type="text" name="name" class="form-control" id="Genre" aria-describedby="emailHelp" value="{{old('name')}}">
                </div>
                <button type="submit" class="btn btn-primary">Invia</button>
             </form>

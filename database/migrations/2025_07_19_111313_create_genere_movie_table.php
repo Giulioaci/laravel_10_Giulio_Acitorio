@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('genere_movie', function (Blueprint $table) {
+        Schema::create('Genre_movie', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('genere_id');
-            $table->foreign('genere_id')->references('id')->on('generes');
+            $table->unsignedBigInteger('Genre_id');
+            $table->foreign('Genre_id')->references('id')->on('Genres');
+            $table->renameColumn('genere_id', 'genre_id');
 
 
             $table->unsignedBigInteger('movie_id');
@@ -28,6 +29,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('genere_movie');
+        Schema::dropIfExists('Genre_movie');
+        $table->renameColumn('genre_id', 'genere_id');
     }
 };

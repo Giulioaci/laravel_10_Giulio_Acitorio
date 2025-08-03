@@ -3,11 +3,11 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-white">Film del genere <span>{{$genere->name}}</span></h2>
+          <h2 class="text-white">Film del genere <span>{{$Genre->name}}</span></h2>
         </div>
       </div>
       <div class="row">
-        @forelse ($genere->movies as $movie)
+        @forelse ($Genre->movies as $movie)
           <div class="col-12 col-md-3">
             <x-card :movie="$movie" />
           </div>

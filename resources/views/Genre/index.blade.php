@@ -5,11 +5,11 @@
             <h2 class="text-white">
                 Esplora per genere:
             </h2>
-            @foreach ($generes as $genere)
+            @foreach ($Genres as $Genre)
             <div class="col-12 col-md-3">
-               <a href="{{route('genere.show', compact('genere'))}}">
+               <a href="{{route('Genre.show', compact('Genre'))}}">
                 <div class="box mx-auto">
-                  <h3 class="text-white">{{$genere->name}}</h3>
+                  <h3 class="text-white">{{$Genre->name}}</h3>
                   </a>
                 </div>
             </div>

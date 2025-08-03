@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\Movie;
 use Illuminate\Database\Eloquent\Model;
 
-class genere extends Model
+class Genre extends Model
 {
     Protected $fillable = [
         'name'

@@ -2,30 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Genere;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
-class GenereController extends Controller
+class GenreController extends Controller
 {
     public function create(){
-        return view('genere.create');
+        return view('Genre.create');
     }
 
     public function index(){
-         $generes = genere::all()->sortBy('name');
-        return view('genere.index', compact('generes'));
+         $Genres = Genre::all()->sortBy('name');
+        return view('Genre.index', compact('Genres'));
     }
 
-    public function show(genere $genere){
-         $genere->load('movies');
-        return view('genere.show', compact('genere'));
+    public function show(Genre $Genre){
+         $Genre->load('movies');
+        return view('Genre.show', compact('Genre'));
     }
 
      public function store(Request $request){
         $request->validate([
             'name'=>'required'
         ]);
-        genere::create([
+        Genre::create([
             'name'=> $request->name
         ]);
         return redirect()->route('Homepage')->with('successMessage','Hai creato una categoria');

@@ -37,11 +37,11 @@
                     <textarea name="plot" id="" cols="30" rows="10" class="form-control"></textarea>
                    </div>
                    <div class="mb-3">
-                    @foreach ($generes as $genere)
-                    <input type="checkbox" id="{{'genereCheck' .  $genere->id}}" name="generes[]" value="{{$genere->id}}">
-                    <label for="{{'genereCheck' . $genere->id}}">{{$genere->name}}</label>
+                    @foreach ($Genres as $Genre)
+                    <input type="checkbox" id="{{'GenreCheck' .  $Genre->id}}" name="Genres[]" value="{{$Genre->id}}">
+                    <label for="{{'GenreCheck' . $Genre->id}}">{{$Genre->name}}</label>
                     @endforeach
-                    <p>Non vedi la categoria corretta? <a href="{{ route('genere.create')}}">Inseriscila tu</a></p>
+                    <p>Non vedi la categoria corretta? <a href="{{ route('Genre.create')}}">Inseriscila tu</a></p>
                    </div>
                    <button type="submit" class="btn btn-primary">Inserisci il tuo film</button>
                 </form>

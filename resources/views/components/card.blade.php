@@ -2,11 +2,11 @@
                     <img src="{{Storage::url($movie->img)}}" class="card-img-top cardImg img-fluid" alt="{{$movie['title']}}">
                     <div class="card-body">
                       <div class="d-flex">
-                          @forelse ($movie->generes as $genere)
+                          @forelse ($movie->Genres as $Genre)
                            @if(!$loop->last)
-                             <a href="{{route('genere.show',compact('genere'))}}">{{$genere->name}},  </a>
+                             <a href="{{route('Genre.show',compact('Genre'))}}">{{$Genre->name}},  </a>
                            @else
-                            <a href="{{route('genere.show',compact('genere'))}}">{{$genere->name}} </a>
+                            <a href="{{route('Genre.show',compact('Genre'))}}">{{$Genre->name}} </a>
                            @endif
                           @empty
                           @endforelse

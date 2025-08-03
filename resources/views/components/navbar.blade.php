@@ -23,8 +23,8 @@
             <li><a class="dropdown-item" href="{{ route('movielist')}}">I nostri film</a></li>
             <li class="nav-item">
           <li><a class="dropdown-item" href="{{ route('movie.create')}}">Inserisci il tuo film</a>
-          <li><a class="dropdown-item" href="{{ route('genere.create')}}">Aggiungi categoria</a></li>
-          <li><a class="dropdown-item" href="{{ route('genere.index')}}">Tutte le categorie</a></li>
+          <li><a class="dropdown-item" href="{{ route('Genre.create')}}">Aggiungi categoria</a></li>
+          <li><a class="dropdown-item" href="{{ route('Genre.index')}}">Tutte le categorie</a></li>
         </li>
         </li>
         </ul> 
